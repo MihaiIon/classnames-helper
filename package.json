@@ -1,0 +1,30 @@
+{
+  "name": "classnames-helper",
+  "version": "0.0.1",
+  "description": "Join classnames with conditions",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "babel index.js -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "classnames",
+    "helper",
+    "join"
+  ],
+  "author": "Mihai Ionescu",
+  "license": "ISC",
+  "dependencies": {
+    "is-type-of": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
