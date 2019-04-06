@@ -1,6 +1,6 @@
 {
   "name": "classnames-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Join classnames with conditions",
   "main": "dist/index.js",
   "scripts": {
@@ -14,9 +14,6 @@
   ],
   "author": "Mihai Ionescu",
   "license": "ISC",
-  "dependencies": {
-    "is-type-of": "^1.2.1"
-  },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
