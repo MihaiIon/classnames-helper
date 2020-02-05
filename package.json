@@ -1,27 +1,40 @@
 {
   "name": "classnames-helper",
-  "version": "0.0.2",
-  "description": "Join classnames with conditions",
-  "main": "dist/index.js",
+  "version": "1.0.0",
+  "description": "Joins classnames with optional conditions while removing unnecessary spaces.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "start": "babel index.js -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "test": "jest --coverage --config jestconfig.json"
   },
   "keywords": [
     "classnames",
+    "classname",
     "helper",
-    "join"
+    "join",
+    "react"
   ],
   "author": "Mihai Ionescu",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3"
+    "@types/jest": "^25.1.1",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.5"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "@types/node": "^12.7.4"
   }
 }
