@@ -2,11 +2,6 @@
 // Source File
 // ======================================================
 
-// Types
-// ======================================================
-
-type ConditionOrBoolFunction = boolean | (() => boolean);
-
 // Helpers
 // ======================================================
 
@@ -61,15 +56,10 @@ const getStringFromArray = (arr: any[], index: number): string => {
  * Joins classnames with optional conditions while removing unnecessary spaces.
  */
 export default (
-  ...args: (
-    | string
-    | [ConditionOrBoolFunction, string]
-    | [ConditionOrBoolFunction, string, string]
-    | [() => number, ...string[]]
-  )[]
+  ...args: (string | [boolean, string] | [boolean, string, string] | [number, ...string[]])[]
 ): string => {
   let _str: string = '';
-  let _arr: [ConditionOrBoolFunction, ...string[]] | [() => number, ...string[]];
+  let _arr: [boolean, ...string[]] | [number, ...string[]];
 
   for (const arg of args) {
     // Append classname
@@ -85,31 +75,27 @@ export default (
         case 1:
           break;
 
-        // Tuple (2): [ConditionOrBoolFunction, string]
+        // Tuple (2): [boolean, string]
         case 2:
-          _arr = arg as [ConditionOrBoolFunction, string];
+          _arr = arg as [boolean, string];
           if (typeof _arr[0] === 'boolean') {
             _str += _arr[0] ? formatString(_arr[1] as string) : '';
-          } else if (typeof _arr[0] === 'function') {
-            _str += _arr[0]() ? formatString(_arr[1] as string) : '';
           }
           break;
 
-        // Tuple (3): [ConditionOrBoolFunction, string, string]
+        // Tuple (3): [boolean, string, string]
         case 3:
-          _arr = arg as [ConditionOrBoolFunction, string, string];
+          _arr = arg as [boolean, string, string];
           if (typeof _arr[0] === 'boolean') {
             _str += _arr[0] ? formatString(_arr[1] as string) : formatString(_arr[2] as string);
-          } else if (typeof _arr[0] === 'function') {
-            _str += _arr[0]() ? formatString(_arr[1] as string) : formatString(_arr[2] as string);
           }
           break;
 
-        // Tuple (x): [() => number), ...string[]]
+        // Tuple (x): [number), ...string[]]
         default:
-          _arr = arg as [() => number, ...string[]];
-          if (typeof _arr[0] === 'function') {
-            _str += formatString(getStringFromArray(_arr, _arr[0]()) as string);
+          _arr = arg as [number, ...string[]];
+          if (typeof _arr[0] === 'number') {
+            _str += formatString(getStringFromArray(_arr, _arr[0]) as string);
           }
       }
     }
