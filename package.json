@@ -16,10 +16,10 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test:badges && npm run lint",
+    "prepublishOnly": "npm run test:badges && npm run lint",
     "preversion": "npm run lint",
-    "test:coverage": "jest --coverage --config jestconfig.json",
-    "test:badges": "npm run test:coverage && jest-coverage-badges"
+    "test": "jest --coverage --config jestconfig.json",
+    "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [
     "classnames",
@@ -32,6 +32,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^25.1.1",
+    "coveralls": "^3.0.9",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.0",
@@ -43,7 +44,6 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "@types/node": "^12.7.4",
-    "jest-coverage-badges": "^1.1.2"
+    "@types/node": "^12.7.4"
   }
 }

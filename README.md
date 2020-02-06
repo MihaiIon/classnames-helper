@@ -1,9 +1,8 @@
 # Description
 
-[![Branches Status](./coverage/badge-branches.svg?branch=master)](./coverage/badge-branches.svg)
-[![Functions Status](./coverage/badge-functions.svg?branch=master)](./coverage/badge-functions.svg)
-[![Lines Status](./coverage/badge-lines.svg?branch=master)](./coverage/badge-lines.svg)
-[![Statements Status](./coverage/badge-statements.svg?branch=master)](./coverage/badge-statements.svg)
+[![Build Status](https://travis-ci.org/mihaiion/classnames-helper.svg?branch=master)](https://travis-ci.org/mihaiion/classnames-helper)
+
+[![Coverage Status](https://coveralls.io/repos/github/mihaiion/classnames-helper/badge.svg?branch=master)](https://coveralls.io/github/mihaiion/classnames-helper?branch=master)
 
 This small package is a simple alternative to other solutions available on **npm**.
 
