@@ -23,11 +23,8 @@ const trim = (str: string): string => {
  * @param str Raw input
  */
 const formatString = (str: string): string => {
-  if (typeof str === 'string') {
-    const _temp = trim(str);
-    return _temp.length > 0 ? `${_temp} ` : '';
-  }
-  return '';
+  const _temp = trim(str);
+  return _temp.length > 0 ? `${_temp} ` : '';
 };
 
 /**
@@ -71,23 +68,23 @@ export default (
     // Check for tuples
     else if (arg instanceof Array) {
       switch ((arg as any[]).length) {
-        case 0:
-        case 1:
-          break;
-
         // Tuple (2): [boolean, string]
         case 2:
           _arr = arg as [boolean, string];
-          if (typeof _arr[0] === 'boolean') {
-            _str += _arr[0] ? formatString(_arr[1] as string) : '';
+          if (typeof _arr[0] === 'boolean' && typeof _arr[1] === 'string') {
+            _str += _arr[0] ? formatString(_arr[1]) : '';
           }
           break;
 
         // Tuple (3): [boolean, string, string]
         case 3:
           _arr = arg as [boolean, string, string];
-          if (typeof _arr[0] === 'boolean') {
-            _str += _arr[0] ? formatString(_arr[1] as string) : formatString(_arr[2] as string);
+          if (
+            typeof _arr[0] === 'boolean' &&
+            typeof _arr[1] === 'string' &&
+            typeof _arr[2] === 'string'
+          ) {
+            _str += _arr[0] ? formatString(_arr[1]) : formatString(_arr[2]);
           }
           break;
 
@@ -95,7 +92,7 @@ export default (
         default:
           _arr = arg as [number, ...string[]];
           if (typeof _arr[0] === 'number') {
-            _str += formatString(getStringFromArray(_arr, _arr[0]) as string);
+            _str += formatString(getStringFromArray(_arr, _arr[0]));
           }
       }
     }

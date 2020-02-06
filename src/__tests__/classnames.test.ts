@@ -123,12 +123,13 @@ test('Tuple (c): [() => number, ...string[]]', () => {
   expect(cn([0, 'c1 c2', 'c3 c4', 'c5 c6'])).toBe('c1 c2');
   expect(cn([1, 'c1 c2', 'c3 c4', 'c5 c6'])).toBe('c3 c4');
   expect(cn([2, 'c1 c2', 'c3 c4', 'c5 c6'])).toBe('c5 c6');
-  expect(cn([3, 'c1 c2', 'c3 c4', 'c5 c6'])).toBe('');
+  expect(cn([-1, 'c1 c2', 'c3 c4', 'c5 c6'])).toBe('');
   // Multiple strings (trimming)
   expect(cn([0, ' c1 c2 ', ' c3 c4 ', ' c5 c6 '])).toBe('c1 c2');
   expect(cn([1, '  c1 c2  ', '  c3 c4  ', '  c5 c6  '])).toBe('c3 c4');
   expect(cn([1, 'c1  c2', 'c3  c4', 'c5  c6'])).toBe('c3 c4');
   expect(cn([2, 'c1   c2', 'c3   c4', 'c5   c6'])).toBe('c5 c6');
+  expect(cn([10, 'c1   c2', 'c3   c4', 'c5   c6'])).toBe('');
 });
 
 test('Multi-Type arguments: string & boolean conditions', () => {
