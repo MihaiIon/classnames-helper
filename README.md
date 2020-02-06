@@ -1,7 +1,6 @@
 # Description
 
 [![Build Status](https://travis-ci.org/MihaiIon/classnames-helper.svg?branch=master)](https://travis-ci.org/MihaiIon/classnames-helper)
-
 [![Coverage Status](https://coveralls.io/repos/github/MihaiIon/classnames-helper/badge.svg?branch=master)](https://coveralls.io/github/MihaiIon/classnames-helper?branch=master)
 
 This small package is a simple alternative to other solutions available on **npm**.
