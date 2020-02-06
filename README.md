@@ -1,5 +1,10 @@
 # Description
 
+[![Branches Status](./coverage/badge-branches.svg?branch=master)](./coverage/badge-branches.svg)
+[![Functions Status](./coverage/badge-functions.svg?branch=master)](./coverage/badge-functions.svg)
+[![Lines Status](./coverage/badge-lines.svg?branch=master)](./coverage/badge-lines.svg)
+[![Statements Status](./coverage/badge-statements.svg?branch=master)](./coverage/badge-statements.svg)
+
 This small package is a simple alternative to other solutions available on **npm**.
 
 The goal is to reduce the amount of code it takes to describe the structure of an element's classnames.

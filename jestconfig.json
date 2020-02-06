@@ -3,5 +3,6 @@
     "^.+\\.(t|j)sx?$": "ts-jest"
   },
   "testRegex": "(/__tests__/).*\\.test\\.ts$",
-  "moduleFileExtensions": ["ts", "tsx", "js"]
+  "moduleFileExtensions": ["ts", "tsx", "js"],
+  "coverageReporters": ["json-summary", "text", "lcov"]
 }
