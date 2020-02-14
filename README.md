@@ -37,7 +37,7 @@ Each argument must be one of the following:
 ## Example
 
 ```jsx
-import React { useState } from "react";
+import React, { useState } from "react";
 import cn from "classnames-helper";
 
 const STATE = {
@@ -47,7 +47,7 @@ const STATE = {
 };
 
 function ReactComponent() {
-  const [isActive, setVisibility] = useState(true);
+  const [isActive, setActive] = useState(true);
   const [isHidden, setHidden] = useState(false);
   const [state, setState] = useState(STATE.PRIMARY);
 
@@ -72,10 +72,8 @@ export default ReactComponent;
 
 The ouput :
 
-```js
-`
+```jsx
 <button type="button" className="c-component-name -active -show -primary some-other-class">
   Click Me
 </button>
-`;
 ```
