@@ -1,6 +1,6 @@
 {
   "name": "classnames-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Joins classnames with optional conditions while removing unnecessary spaces.",
   "repository": {
     "type": "git",
